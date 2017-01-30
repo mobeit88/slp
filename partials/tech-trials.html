@@ -1,0 +1,30 @@
+<div class="row" data-ng-cloak>
+    <br>
+
+    <div class="col-sm-1 col-md-1">
+        <button ui-sref="tech.activate" class="btn btn-default">{{"btn.back"|translate}}</button>
+    </div>
+    <div class="col-sm-11 col-md-11">
+        <br>
+        <div id="dvData1" class="table-responsive">
+            <table  ng-table="tableParams" class="table table-condensed table-bordered table-hover">
+                <tbody ng-repeat="data in $data">
+                <tr>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Product SKU'">{{data.products.sku}}</td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Product Name'">{{data.products.name}}</td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Version'">{{data.products.version}}</td>
+                    <td id="s{{$index}}" class="text-center">
+                        <select  ng-model="action" ng-change="chooseAction(action,$event,data.licenses.productKey)">
+                            <option value="">{{"select.partials.license.option0"|translate}}</option>
+                            <option value="1">{{"select.partials.license.option1"|translate}}</option>
+                            <option value="2">{{"select.partials.license.option2"|translate}}</option>
+                            <option value="3">{{"select.partials.license.option3"|translate}}</option>
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

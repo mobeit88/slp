@@ -1,0 +1,28 @@
+
+<div class="col-sm-6">
+    <form>
+        <div class="form-group">
+            <label for="orderNumber"><b>{{"tech.form.label.product_order"|translate}}</b><br><b>{{"tech.form.label.order_number"|translate}}</b></label>
+            <input type="text" class="form-control" id="orderNumber" ng-model="ordernumber" ng-minlength="14" maxlength="14" ng-maxlength="14">
+            <button ng-disabled="!ordernumber" ng-click="goTo(ordernumber)" class="btn btn-default">{{"btn.submit"|translate}}</button>
+        </div>
+        <div class="form-group">
+            <label for="product"><b>{{"tech.form.label.sales_trials"|translate}}</b><br><b>{{"tech.form.label.product_key"|translate}}</b></label>
+            <input type="text" ng-model="productkey" class="form-control" id="product">
+        </div>
+        <button ng-disabled="!productkey" ng-click="goToTechTrials(productkey)" class="btn btn-default">{{"btn.submit"|translate}}</button>
+    </form>
+</div>
+<script>
+    $('#orderNumber').keyup(function() {
+        var foo = $(this).val().split("-").join("");
+        if(foo.length <=14){
+            if (foo.length > 0) {
+                foo = foo.match(new RegExp('.{1,4}', 'g')).join("-");
+            }
+            $(this).val(foo);
+        } else {
+            return ""
+        }
+    });
+</script>

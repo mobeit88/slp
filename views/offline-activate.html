@@ -1,0 +1,18 @@
+<div class="row">
+    <div  class="col-sm-10">
+        <strong style="color: #00a1d9">Enter The System ID for the Machine Where The License Will Be Activated</strong>
+        <br>
+        <br>
+        <div  class="col-sm-4">
+
+            <form>
+                <div class="form-group">
+                    <label for="system"><b>Enter System Id</b></label>
+                    <input type="text" class="form-control" id="system" ng-model="systemId">
+                </div>
+                <button ng-click="goToMain()" class="btn btn-default pull-left">{{"btn.back"|translate}}</button>
+                <button ng-click="goToOfflineSubmit('{{systemId}}')"  class="btn btn-default pull-right">{{"btn.next"|translate}}</button>
+            </form>
+        </div>
+    </div>
+</div>

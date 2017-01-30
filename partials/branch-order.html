@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div class="col-xs-12 col-md-12">
+            <div id="dvData" class="table-responsive">
+                <table  ng-table="tableParams" class="table table-condensed table-bordered table-hover">
+                    <tbody ng-repeat="data in $data">
+                    <tr>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Purchased'" sortable="'datePurchased'">{{data.datePurchased}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'AOMS #'" sortable="'aomsOrderNumber'">{{data.aomsOrderNumber}}</td>
+                        <td  class="text-center" header-class="'text-center'"  data-title="'PO #'" sortable="'customerPoNumber'">{{data.customerPoNumber}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Customer'" sortable="'lineNumbers[0].products[0].customer.name'">
+                            <a ng-click="customerInfo()"  data-toggle="tooltip" ng-init="data.addressTitle=data.lineNumbers[0].products[0].customer.address" title="{{data.addressTitle.street1}}, {{data.addressTitle.city}}, {{data.addressTitle.state}}, {{data.addressTitle.country}}, {{data.addressTitle.postal}}" data-placement="top">{{data.lineNumbers[0].products[0].customer.name}}</a>
+                        </td>
+                        <td width="9%"  class="text-center" header-class="'text-center'"  data-title="'Line #'" sortable="'lineNumbers.length'">1 of {{data.lineNumbers.length}}</td>
+                        <td width="10%"  class="text-center" header-class="'text-center'"  data-title="'Quantity'" sortable="'quantity'">{{data.quantity}}</td>
+                        <td width="11%"  class="text-center" header-class="'text-center'"  data-title="'Product SKU'" sortable="'lineNumbers[0].SKU'">{{data.lineNumbers[0].SKU}}</td>
+                        <td width="14%"  class="text-center" header-class="'text-center'"  data-title="'Product Name'" sortable="'lineNumbers[0].description'">{{data.lineNumbers[0].description}}</td>
+                        <td width="6%" class="text-center" header-class="'text-center'"  data-title="'....'"><a ui-sref="branch.more" >{{"table.btn.more"|translate}}...</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

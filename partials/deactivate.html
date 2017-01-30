@@ -1,0 +1,14 @@
+<div>
+    <div ng-if="!show_breadcrumb" class="col-md-12 col-xs-12">
+        <div class="well"><b>{{"tech.deactiavte.title"|translate}}</b></div>
+        <div align="center" class="col-md-6 col-xs-6">
+            <select class="form-control" ng-model="option" ng-change="onChange(option)">
+                <option value="">{{"tech.select.option1"|translate}}</option>
+                <option value="1">{{"tech.select.option2"|translate}}</option>
+                <option value="2">{{"tech.select.option3"|translate}}</option>
+                <option value="3">{{"tech.select.option4"|translate}}</option>
+            </select>
+        </div>
+    </div>
+    <div ng-if="show_breadcrumb" ng-include src="'partials/breadcrumb1.html'"></div>
+</div>

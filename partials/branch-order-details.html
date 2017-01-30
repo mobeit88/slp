@@ -1,0 +1,33 @@
+<div ng-cloak>
+    <div class="row">
+        <div align="center">
+            <span>
+                <b> Date Purchased:</b> 11/30/2016<br>
+                <b> AOMS Order #:</b> 7754641 <br>
+                <b> PO #:</b> 4267375902 <br>
+                Product License(s) for this PO</br>
+                <b>Customer:</b> Westin <br>
+                <b>Project:</b> New Westin Hote <br>
+            </span>
+            <br>
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <div class="table-responsive">
+                <table  ng-table="tableParams"  class="table table-condensed table-bordered table-hover">
+                    <tbody ng-repeat="data in $data" >
+                    <tr>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Line #'" sortable="'line'">{{$index+1}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Quantity'" sortable="'products.length'">{{data.lineNumbers[0].products.length}} </td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Available'">1</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Product SKU'" sortable="'SKU'">{{data.lineNumbers[0].SKU}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Product Name'" sortable="'description'">{{data.lineNumbers[0].description}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Version'">2.0</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'License'">{{data.lineNumbers[0].products[0].type}}</td>
+                        <td class="text-center" id="v{{$index}}"><span ><i data-toggle="tooltip" data-clipboard-action="copy" data-clipboard-target="#v{{$index}}" title="{{data.lineNumbers[0].products[0].key}}"  data-placement="top" class="fa fa-key fa-2x" style="color:gray;" aria-hidden="true"></i></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

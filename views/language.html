@@ -1,0 +1,14 @@
+
+<div class="language-section">
+    <ui-select ng-model="currentLocaleDisplayName" theme="select2"  style="min-width: 170px;" ng-change="changeLanguage(currentLocaleDisplayName)">
+        <ui-select-match placeholder="{{'directives.language-select.Language' | translate}}"><i class="img-thumbnail flag flag-icon-background {{$select.selected.icon}}"></i> {{$select.selected.language}}</ui-select-match>
+        <ui-select-choices repeat="localesDisplayName in localesDisplayNames | filter: $select.search" >
+            <span class="img-thumbnail flag flag-icon-background {{localesDisplayName.icon}}"></span>
+            <div ng-bind-html="localesDisplayName.language | highlight: $select.search" style="display: inline"></div>
+        </ui-select-choices>
+    </ui-select>
+</div>
+
+
+
+

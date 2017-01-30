@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="btn-group btn-breadcrumb">
+        <a  ng-class="{'active':show_enter}" class="btn btn-default">{{"tech.breadcrumb.enter"|translate}}</a>
+        <a  ng-class="{'active':show_select}" class="btn btn-default">{{"tech.breadcrumb.select"|translate}}</a>
+        <a  ng-class="{'active':show_dl}" class="btn btn-default">{{"tech.breadcrumb.dl"|translate}}</a>
+        <a  ng-class="{'active':show_upload}" class="btn btn-default">{{"tech.breadcrumb.upload"|translate}}</a>
+        <a  ng-class="{'active':show_license}" class="btn btn-default">{{"tech.breadcrumb.license"|translate}}</a>
+    </div>
+    <div ng-if="show_enter" id="enter" class="col-sm-6 col-xs-6">
+        <br><br>
+        <div class="form-group">
+            <label for="product"><b>{{"tech.breadcrumb.enter"|translate}}</b></label>
+            <input type="text" class="form-control" id="product">
+        </div>
+        <button ng-click="showTable()" class="btn btn-default">{{"btn.next"|translate}}</button>
+    </div>
+    <div  ng-if="show_select" class="col-md-12 col-sm-12">
+        <div  ng-include src="'partials/deactivate-table.html'"></div>
+    </div>
+    <div  ng-if="show_dl" class="col-md-12 col-sm-12">
+        <div  ng-include src="'partials/dl.html'"></div>
+    </div>
+    <div  ng-if="show_upload" class="col-md-12 col-sm-12">
+        <div  ng-include src="'partials/upload-release.html'"></div>
+    </div>
+    <div  ng-if="show_license" class="col-md-12 col-sm-12">
+        <div  ng-include src="'partials/license-available.html'"></div>
+    </div>
+</div>

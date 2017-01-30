@@ -1,0 +1,35 @@
+<div class="row">
+    <div align="center">
+
+        <h3>{{"tech.page.skulist.title"|translate}}</h3>{{name}}
+    </div>
+    <div class="col-md-12 col-sm-12 ">
+        <div  id="dvData" class="table-responsive">
+            <table  ng-table="tableParams" class="table table-bordered table-hover table-condensed">
+                <tbody ng-repeat="data in $data track by $index">
+                {{data}}
+                <tr>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Product SKU'">
+                        <span ng-if="!published_software" ui-sref="tech.skudetails">
+                            <a  href="#">{{data.sku}}</a>
+                        </span>
+                        <span ng-if="published_software">{{data.sku}}</span>
+                    </td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Product Name'">{{data.name|uppercase}}</td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Version'">{{data.version?data.version:'Null'}}</td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Date Published'">{{data.publishDate?data.publishDate:'Null'}}</td>
+                    <td ng-if="published_software" data-title="'....'" class="text-center"><span ><i  class="fa fa-exclamation-triangle fa-2x" style="color:gray;" aria-hidden="true"></i></span></td>
+                    <td ng-if="published_software" data-title="'....'" class="text-center"><span ><i  class="fa fa-download fa-2x" style="color:gray;" aria-hidden="true"></i></span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    #dvData {
+        margin-left: 22%;
+        margin-right: 22%;
+    }
+</style>

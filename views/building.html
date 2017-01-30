@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div align="center" style="width:90%; margin:0 auto;">
+                <ul class="nav nav-tabs nav-justified">
+                    <li ui-sref="building" class="active"><a data-toggle="tab"  href="#welcome">{{"abcs.tab.welcome"|translate}}</a></li>
+                    <li ui-sref="building.licenses"><a data-toggle="tab"  href="#my_licenses">{{"abcs.tab.my_licenses"|translate}}</a></li>
+                    <li ui-sref="building.orders"><a data-toggle="tab"  href="#my_orders">{{"abcs.tab.my_order"|translate}}</a></li>
+                    <li ui-sref="building.softwares"><a data-toggle="tab" href="#my_softwares">{{"abcs.tab.my_software"|translate}}</a></li>
+                    <li ui-sref="building.activate"><a data-toggle="tab"  href="#activate">{{"abcs.tab.activate"|translate}}</a></li>
+                    <li ui-sref="building.deactivate"><a data-toggle="tab"  href="#deactivate">{{"abcs.tab.deactivate"|translate}}</a></li>
+                </ul>
+            </div>
+            <div class="tab-content" style="width:80%; margin:0 auto;">
+                <div align="center" style="width:600px; margin:0 auto;" class="tab-pane fade in active" id="welcome">
+                    <br>
+                    <h3>{{"branch.page.welcome.title"|translate}}</h3>
+                    <br><br>
+                    <p align="justify">
+                        Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.
+                        Luctus arcu, urna praesent at id quisque ac. Arcu es massa vestibulum malesuada,
+                        integer vivamus elit eu mauris eus, cum eros quis aliquam wisi. Nulla wisi laoreet
+                        suspendisse integer vivamus elit eu mauris hendrerit facilisi, mi mattis pariatur
+                        aliquam pharetra eget.
+                    </p>
+                    <p align="justify">
+                        Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.
+                        Luctus arcu, urna praesent at id quisque ac. Arcu es massa vestibulum malesuada, integer vivamus elit eu mauris eus, cum eros quis aliquam wisi. Nulla wisi laoreet suspendisse integer vivamus elit eu mauris hendrerit facilisi, mi mattis pariatur aliquam pharetra eget.
+                    </p>
+                </div>
+
+                <div id="my_licenses" class="tab-pane fade" ng-controller="buildingMyLicenseTabCtrl">
+                    <br><br>
+                    <div ui-view="building_my_licenses"></div>
+                    <div ui-view="building_download"></div>
+                    <div ui-view="building_offline_activate"></div>
+                    <div ui-view="building_offline_submit"></div>
+                </div>
+                <div id="my_orders" class="tab-pane fade">
+                    <br><br>
+                    <div ui-view="building_my_orders"></div>
+                    <div ui-view="building_orders_details"></div>
+                </div>
+                <div id="my_softwares" class="tab-pane fade">
+                    <br>
+                    <div  ui-view="building_my_softwares"></div>
+                </div>
+                <div id="activate" class="tab-pane fade" ng-controller="buildingActivateTabCtrl">
+                    <div ui-view="building_activate"></div>
+                    <div ui-view="building_download"></div>
+                    <div ui-view="building_offline_activate"></div>
+                    <div ui-view="building_offline_submit"></div>
+                </div>
+                <div id="deactivate" class="tab-pane fade">
+                    <div ui-view="building_deactivate"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

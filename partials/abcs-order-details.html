@@ -1,0 +1,30 @@
+<div class="row" ng-cloak>
+    <div align="center">
+        <span>
+            <b> Date Purchased:</b> 11/30/2016<br>
+            <b> AOMS Order #:</b> 7754641 <br>
+            <b> PO #:</b> 4267375902 <br>
+            Product License(s) for this PO</br>
+            <b>Customer:</b> Westin <br>
+            <b>Project:</b> New Westin Hote <br>
+        </span>
+        <br>
+    </div>
+    <div class="col-xs-12 col-md-12">
+        <div class="table-responsive">
+            <table  ng-table="tableParams"  class="table table-condensed table-bordered table-hover">
+                <tbody ng-repeat="data in $data" >
+                <tr>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Line Nbr'" >{{$index+1}}</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Quantity'">{{data.lineNumbers[0].products.length}} </td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Available'">1</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Product SKU'">{{data.lineNumbers[0].SKU}}</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Product Name'">{{data.lineNumbers[0].description}}</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Version'">2.0</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'License Type'">{{data.lineNumbers[0].products[0].type}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

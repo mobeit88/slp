@@ -1,0 +1,28 @@
+<div class="row">
+    <div align="center">
+        <br>
+        <p><b>Tech : </b>John Smith</p>
+        <p><b>License Requested : </b>MS-ADX50-U-0 / APP SRV 50USER NEW Version 10.0</p>
+        <p><b>Justification : </b> Need another license for The Westin construction project</p><br>
+
+        <button class="btn btn-default">{{"btn.approve"|translate}}</button>
+        <button class="btn btn-default">{{"btn.reject"|translate}}</button>
+    </div>
+        <br>
+        <br>
+
+        <div class="col-md-12 col-sm-12 ">
+            <div  id="dvData" class="table-responsive">
+                <table  ng-table="tableParams" class="table  table-bordered table-hover table-condensed">
+                    <tbody ng-repeat="data in $data  track by $index" ng-if="$index<3">
+                    <tr>
+                        <td  class="text-center" header-class="'text-center'"  data-title="'Product SKU'">{{data.lineNumbers[0].SKU}}</td>
+                        <td  class="text-center" header-class="'text-center'"  data-title="'Product Name'">{{data.lineNumbers[0].description}}</td>
+                        <td  class="text-center" header-class="'text-center'"  data-title="'Version'">1.0</td>
+                        <td  class="text-center" header-class="'text-center'"  data-title="'Quantity'">{{$index+1}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>

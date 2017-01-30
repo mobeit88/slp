@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div align="center" style="width:90%; margin:0 auto;">
+                <ul class="nav nav-tabs nav-justified">
+                    <li ui-sref="tech" class="active"><a data-toggle="tab"  href="#welcome">{{"license.tab.welcome"|translate}}</a></li>
+                    <li ui-sref="tech.activate"><a data-toggle="tab"  href="#activate">{{"license.tab.activate"|translate}}</a></li>
+                    <li ui-sref="tech.deactivate"><a data-toggle="tab"  href="#deactivate">{{"license.tab.deactivate"|translate}}</a></li>
+                    <li ui-sref="tech.myWork"><a data-toggle="tab" href="#my-work">{{"license.tab.mywork"|translate}}</a></li>
+                    <li ui-sref="tech.license"><a data-toggle="tab"  href="#my-tech">{{"license.tab.mytech"|translate}}</a></li>
+                    <li ui-sref="tech.customer"><a data-toggle="tab" href="#customer-license">{{"license.tab.customer"|translate}}</a></li>
+                    <li ui-sref="tech.software"><a data-toggle="tab"  href="#published-software">{{"license.tab.software"|translate}}</a></li>
+                </ul>
+            </div>
+            <div class="tab-content"  style="width:80%; margin:0 auto;">
+                <div align="center" style="width:600px; margin:0 auto;" class="tab-pane fade in active" id="welcome">
+                    <br>
+                    <h3>{{"tech.page.welcome.title"|translate}}</h3>
+                    <br><br>
+                    <p align="justify">
+                        Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.
+                        Luctus arcu, urna praesent at id quisque ac. Arcu es massa vestibulum malesuada,
+                        integer vivamus elit eu mauris eus, cum eros quis aliquam wisi. Nulla wisi laoreet
+                        suspendisse integer vivamus elit eu mauris hendrerit facilisi, mi mattis pariatur
+                        aliquam pharetra eget.
+                    </p>
+                    <p align="justify">
+                        Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.
+                        Luctus arcu, urna praesent at id quisque ac.Arcu es massa vestibulum malesuada, integer vivamus elit eu mauris eus, cum eros quis aliquam wisi. Nulla wisi laoreet suspendisse integer vivamus elit eu mauris hendrerit facilisi, mi mattis pariatur aliquam pharetra eget.
+                    </p>
+                </div>
+                <div id="activate" class="tab-pane fade" ng-controller="activateTabCtrl">
+                    <br><br>
+                    <div ui-view="activate"></div>
+                    <div ui-view="submit_activate"></div>
+                    <div ui-view="download"></div>
+                    <div ui-view="offline_activate"></div>
+                    <div ui-view="tech_trials"></div>
+                    <div ui-view="offline_submit"></div>
+                </div>
+                <div id="deactivate" class="tab-pane fade" ng-controller="deactivateTableCtrl">
+                    <br><br>
+                    <div ui-view="deactivate"></div>
+                </div>
+                <div id="my-work" class="tab-pane fade">
+                    <div  ui-view="myWork"></div>
+                </div>
+                <div id="my-tech" class="tab-pane fade" ng-controller="myTechLicenseTabCtrl">
+                    <br><br>
+                    <div ui-view="license"></div>
+                    <div ui-view="skulist"></div>
+                    <div ui-view="offline_activate"></div>
+                    <div ui-view="offline_submit"></div>
+                    <div ui-view="skudetails"></div>
+
+                    <div ui-view="download"></div>
+                </div>
+                <div id="customer-license" class="tab-pane fade">
+                    <div ui-view="tech_customer"></div>
+                </div>
+                <div id="published-software" class="tab-pane fade">
+                    <div ui-view="published_software"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

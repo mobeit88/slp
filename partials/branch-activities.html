@@ -1,0 +1,41 @@
+<div ng-cloak>
+    <div class="row">
+
+        <div align="center" style="width:50%; margin:0 auto;">
+            <div class="col-md-6">
+                <label for="startDate"><i class="fa fa-calendar"></i>Start Date</label>
+                <input ng-change="clearReleaseDate()"  readonly="readonly" type="text" id="startDate" name="startDate"
+                       class="form-control date-input" date-picker data="date.start"  data-date-format="YYYY/MM/DD"
+                       ng-model="date.start"
+                       ng-pattern="/\d{4}(?:/\d{1,2}){2}/" >
+            </div>
+            <div class="col-md-6">
+                <label for="endDate"><i class="fa fa-calendar"></i>End Date</label>
+                <input ng-change="setMindate()"  readonly="readonly" type="text" id="endDate" name="endDate"
+                       class="form-control date-input" date-picker data="date.end"  data-date-format="YYYY/MM/DD"
+                       ng-model="date.end"
+                       ng-pattern="/\d{4}(?:/\d{1,2}){2}/" >
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-12">
+            <br>
+            <br>
+            <div class="table-responsive">
+                <table  ng-table="tableParams"  class="table table-condensed table-bordered table-hover">
+                    <tbody ng-repeat="data in $data" >
+                    <tr>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Date'" sortable="'line'">{{$index+1}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Tech'" sortable="'products.length'">{{data.lineNumbers[0].products[0].customer.name}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Action'">Online Activation</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Customer'" sortable="'lineNumbers[0].products[0].customer.name'">Hospital</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'System Id'">{{data.lineNumbers[0].products[0].sid}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Product SKU'" sortable="'SKU'">{{data.lineNumbers[0].SKU}}</td>
+                        <td  class="text-center" header-class="'text-center'" data-title="'Product Name'" sortable="'description'">{{data.lineNumbers[0].description}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

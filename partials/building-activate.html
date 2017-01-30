@@ -1,0 +1,27 @@
+<div class="row" data-ng-cloak>
+    <div class="col-sm-12 col-md-12">
+        <br>
+        <div id="dvData1" class="table-responsive">
+            <table  ng-table="tableParams" class="table table-condensed table-bordered table-hover">
+                <tbody ng-repeat="data in $data">
+                <tr>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Customer'"></td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'SKU'">{{data.lineNumbers[0].SKU}}</td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Product'" ></td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Version'"></td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'License Type'"></td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'License Exp.'"></td>
+                    <td id="s{{$index}}" class="text-center">
+                        <select ng-model="action" ng-change="chooseAction(action,$event,data.lineNumbers[0].products[0].key)">
+                            <option value="">{{"select.partials.license.option0"|translate}}</option>
+                            <option value="1">{{"select.partials.license.option1"|translate}}</option>
+                            <option value="2">{{"select.partials.license.option2"|translate}}</option>
+                            <option value="3">{{"select.partials.license.option3"|translate}}</option>
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

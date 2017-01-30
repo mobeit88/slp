@@ -1,0 +1,19 @@
+<div id="select" class="row">
+    <br><br>
+    <div class="col-xs-12 col-md-12">
+        <div class="table-responsive">
+            <table  ng-table="tableParams"  class="table table-condensed table-bordered table-hover">
+                <tbody ng-repeat="data in $data" >
+                <tr>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Date'" sortable="'line'">{{data.datePurchased}}</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Tech'" sortable="'products.length'">VED</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Pruduct SKU'">MS-ADX100U-1</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Product Name'" sortable="'SKU'">APP SRV 50USER NEW</td>
+                    <td  class="text-center" header-class="'text-center'" data-title="'Version'" sortable="'description'">1.0</td>
+                    <td class="text-center" header-class="'text-center'"><span ><a ui-sref="branch.view" href="#">View</a></span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

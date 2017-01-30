@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div align="center" style="width:90%; margin:0 auto;">
+                <ul class="nav nav-tabs nav-justified">
+                    <li ui-sref="branch" class="active"><a data-toggle="tab"  href="#welcome">{{"branch.tab.welcome"|translate}}</a></li>
+                    <li ui-sref="branch.order"><a data-toggle="tab"  href="#order">{{"branch.tab.orders"|translate}}</a></li>
+                    <li ui-sref="branch.customer"><a data-toggle="tab"  href="#customer_license">{{"branch.tab.customer_license"|translate}}</a></li>
+                    <li ui-sref="branch.activities"><a data-toggle="tab" href="#tech_activities">{{"branch.tab.tech_activities"|translate}}</a></li>
+                    <li ui-sref="branch.tech"><a data-toggle="tab"  href="#tech_license">{{"branch.tab.tech_license"|translate}}</a></li>
+                </ul>
+            </div>
+            <div class="tab-content" style="width:80%; margin:0 auto;">
+                <div align="center" style="width:600px; margin:0 auto;" class="tab-pane fade in active" id="welcome">
+                    <br>
+                    <h3>{{"branch.page.welcome.title"|translate}}</h3>
+                    <br><br>
+                    <p align="justify">
+                        Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.
+                        Luctus arcu, urna praesent at id quisque ac. Arcu es massa vestibulum malesuada,
+                        integer vivamus elit eu mauris eus, cum eros quis aliquam wisi. Nulla wisi laoreet
+                        suspendisse integer vivamus elit eu mauris hendrerit facilisi, mi mattis pariatur
+                        aliquam pharetra eget.
+                    </p>
+                    <p align="justify">
+                        Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.
+                        Luctus arcu, urna praesent at id quisque ac. Arcu es massa vestibulum malesuada, integer vivamus elit eu mauris eus, cum eros quis aliquam wisi. Nulla wisi laoreet suspendisse integer vivamus elit eu mauris hendrerit facilisi, mi mattis pariatur aliquam pharetra eget.
+                    </p>
+                </div>
+
+                <div id="order" class="tab-pane fade">
+                    <br><br>
+                    <div ui-view="branch_order"></div>
+                    <div ui-view="order_details"></div>
+                    <div ui-view="customer_info"></div>
+                </div>
+                <div id="customer_license" class="tab-pane fade">
+                    <br><br>
+                    <div ui-view="customer_license"></div>
+                </div>
+                <div id="tech_activities" class="tab-pane fade">
+                    <br>
+                    <div  ui-view="tech_activities"></div>
+                </div>
+                <div id="tech_license" class="tab-pane fade">
+                    <div ui-view="tech_license"></div>
+                    <div ui-view="view_sku"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

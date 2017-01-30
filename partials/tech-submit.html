@@ -1,0 +1,47 @@
+<div class="row" data-ng-cloak>
+    <div class="col-md-6 col-sm-12">
+        <b>Order Info</b><br>
+        <span>
+            Order Date: {{orderData[0].aomsOrderEntryDate}}<br>
+            Customer PO: {{orderData[0].customerPONbr}}<br>
+            AOMS Order: {{orderData[0].aomsOrderReleaseNbr}}<br>
+        </span>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <b>Customer Info</b><br>
+        <span>
+            {{orderData[0].company.name}}<br>
+            {{orderData[0].company.address.street1}}<br>
+            {{orderData[0].address.company.city}} {{orderData[0].company.address.state}},{{orderData[0].company.address.zipcode}}<br>
+
+        </span>
+    </div>
+    <br>
+    <div class="col-sm-1 col-md-1">
+        <button ui-sref="tech.activate" class="btn btn-default">{{"btn.back"|translate}}</button>
+    </div>
+    <div class="col-sm-11 col-md-11">
+        <br>
+        <div id="dvData1" class="table-responsive">
+            <table  ng-table="tableParams" class="table table-condensed table-bordered table-hover">
+                <tbody ng-repeat="data in $data">
+                <tr>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Product SKU'">{{data.sku}}</td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Product Name'">{{data.name}}</td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Version'">{{data.content[0].version}}</td>
+                    <td  class="text-center" header-class="'text-center'"  data-title="'Quantity Available'">{{$index}}</td>
+                    <td id="s{{$index}}" class="text-center">
+                        <select  ng-model="action" ng-change="chooseAction(action,$event,data.lineNumbers[0].products[0].key)">
+                            <option value="">{{"select.partials.license.option0"|translate}}</option>
+                            <option value="1">{{"select.partials.license.option1"|translate}}</option>
+                            <option value="2">{{"select.partials.license.option2"|translate}}</option>
+                            <option value="3">{{"select.partials.license.option3"|translate}}</option>
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
